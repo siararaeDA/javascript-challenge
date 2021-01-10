@@ -20,3 +20,10 @@ tableData.forEach(ufoSighting => {
 // Add filter functionality to button
 var filterButton = d3.select("#filter-btn");
 
+filterButton.on("click", function() {
+    // Get the input value in the filter field
+    var dateInput = d3.select("#datetime").property("value");
+
+    // Get filtered values
+    var filteredData = tableData.filter(entry => entry.datetime === dateInput);
+})
