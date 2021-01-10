@@ -26,6 +26,9 @@ filterButton.on("click", function() {
     // Clear the table so it will only display items that match filter
     d3.selectAll("tr").remove();
 
+    // Prevent page from refreshing
+    d3.event.preventDefault();
+
     // Get filtered values
     var filteredData = tableData.filter(entry => entry.datetime === dateInput);
 
